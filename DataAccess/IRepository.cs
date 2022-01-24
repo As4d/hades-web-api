@@ -8,7 +8,7 @@
 
         public bool CreateUser(UserDto user);
 
-        public bool UpdateUser(UserDto user);
+        public int UpdateUser(UserDto user);
 
         public bool CreateUserFilesInfo(UserFilesInfoDto userFilesInfo);
 

@@ -66,7 +66,7 @@ namespace DataAccess
             }
         }
 
-        public bool UpdateUser(UserDto user)
+        public int UpdateUser(UserDto user)
         {
             try
             {
@@ -88,14 +88,14 @@ namespace DataAccess
                 sqlCommand.Parameters.AddWithValue("@userId", user.UserId);
 
                 sqlCommand.Connection.Open();
-                sqlCommand.ExecuteNonQuery();
+                var userUpdated = sqlCommand.ExecuteNonQuery();
 
                 sqlCommand.Connection.Close();
-                return true;
+                return userUpdated;
             }
             catch (Exception)
             {
-                return false;
+                return 0;
             }
         }
 

@@ -90,7 +90,7 @@ namespace HadesDemoWebApi.Controllers
 
         [Route("updateuser")]
         [HttpPut]
-        public bool Put(int id, [FromBody] User user)
+        public int Put(int id, [FromBody] User user)
         {
             try
             {
@@ -104,9 +104,9 @@ namespace HadesDemoWebApi.Controllers
                     TotalFileCount = user.TotalFileCount
                 };
 
-                var isSuccess = _repository.UpdateUser(userDto);
+                var userUpdated = _repository.UpdateUser(userDto);
 
-                return isSuccess;
+                return userUpdated;
             }
             catch (Exception e)
             {

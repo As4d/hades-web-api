@@ -1,5 +1,7 @@
 ﻿using System;
 
+// Data transfer object
+
 namespace DataAccess
 {
     public class UserFilesInfoDto
