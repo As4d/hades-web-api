@@ -5,8 +5,6 @@ using DataAccess;
 using HadesDemoWebApi.Models;
 using Microsoft.AspNetCore.Cors;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace HadesDemoWebApi.Controllers
 {
     [Route("api")]
@@ -20,19 +18,18 @@ namespace HadesDemoWebApi.Controllers
             _repository = repository;
         }
         
-        // GET: api/<DataAccessController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        [Route("GetVulnerabilitySummary/{osVersion}")]
+        public List<VulnerabilitySummary> GetVulnerabilitySummary(string osVersion)
         {
-            return new string[] { "value1", "value2", "value3" };
+            return _repository.GetVulnerabilitySummary(osVersion);
         }
 
-        // may remove
-        // GET api/<DataAccessController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("GetVulnerabilityMetric/{osVersion}")]
+        public List<VulnerabilityMetric> VulnerabilityMetric(string osVersion)
         {
-            return "value";
+            return _repository.GetVulnerabilityMetric(osVersion);
         }
 
         // POST api/<DataAccessController>
@@ -62,8 +59,7 @@ namespace HadesDemoWebApi.Controllers
                 throw new Exception(e.Message);
             }
         }
-
-
+        
         [Route("createuserfiles")]
         [HttpPost]
         [EnableCors("AllowOrigins")]
@@ -136,12 +132,6 @@ namespace HadesDemoWebApi.Controllers
             {
                 throw new Exception(e.Message);
             }
-        }
-
-        // DELETE api/<DataAccessController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

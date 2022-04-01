@@ -1,4 +1,6 @@
-﻿namespace DataAccess
+﻿using System.Collections.Generic;
+
+namespace DataAccess
 {
     public interface IRepository
     {
@@ -13,5 +15,9 @@
         public bool CreateUserFilesInfo(UserFilesInfoDto userFilesInfo);
 
         public int UpdateUserFilesInfo(UserFilesInfoDto userFilesInfo);
+
+        public List<VulnerabilitySummary> GetVulnerabilitySummary(string osVersion);
+
+        public List<VulnerabilityMetric> GetVulnerabilityMetric(string osVersion);
     }
 }
