@@ -1,6 +1,6 @@
 # HadesDemoWebApi
 
-## Why I used Web API
+## Operations
 
 To handle SQL CRUD operations via Hades desktop app
 <br />Adds layer of security as only Web API has access to SQL databse
