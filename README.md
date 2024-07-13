@@ -1,15 +1,9 @@
-# HadesDemoWebApi
+# Hades Web API 🔄
 
-## Operations
+This repository contains the backend API for the Hades Security Vulnerability Scanner. The API manages SQL CRUD operations, integrating advanced OOP paradigms and is hosted on Azure for scalable and reliable data storage.
 
-To handle SQL CRUD operations via Hades desktop app
-<br />Adds layer of security as only Web API has access to SQL databse
+## Features ✨
 
-## Where is database hosted
-
-Azure Cloud
-
-## TODO
-
-Add API key to lockdown api
-<br />key will be hidden in .exe
+- **SQL CRUD Operations 🗃️:** Handles create, read, update, and delete operations efficiently.
+- **Azure Cloud Hosting ☁️:** Ensures scalable and reliable data storage.
+- **Advanced OOP Paradigms 💡:** Utilizes advanced object-oriented programming techniques (POCO Objects).
